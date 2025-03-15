@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Employee.h"
+#include "employee.h"
 namespace Records {
 	Employee::Employee(const std::string& firstName,
 		const std::string& lastName)
@@ -24,7 +24,6 @@ namespace Records {
 	}
 	void Employee::display() const
 	{
-		std::cout << "Employee Information" << std::endl;
 		std::cout << "Name: " << getFirstName() << " " << getLastName() << std::endl;
 		std::cout << "Employment: " << (isHired() ? "Current Employee" : "Former Employee") << std::endl;
 		std::cout << "ID: " << getEmployeeNumber() << std::endl;

@@ -2,28 +2,27 @@
 //
 
 #include <iostream>
-#include "Employee.h"
+#include "employee.h"
+#include "database.h"
 
 int main()
 {
-    std::cout << "Testing the Employee class: " << std::endl;
-    Records::Employee firstEmployee{ "Monem", "Ahmed" };
-    firstEmployee.setLastName("Yo");
-    firstEmployee.setEmployeeNumber(44295);
-    firstEmployee.setSalary(18'000);
-    firstEmployee.promote();
-    firstEmployee.promote(3'000);
-    firstEmployee.hire();
-    firstEmployee.display();
+	using namespace Records;
+	using namespace std;
+	Database my_db;
+	Employee& emp1 = my_db.addEmployee("Monem", "Ahmed");
+	emp1.fire();
+
+	Employee& emp2 = my_db.addEmployee("Muhib", "Ahmed");
+	emp2.setSalary(100'000);
+
+	Employee& emp3 = my_db.addEmployee("Ismat", "Meem");
+	emp3.setSalary(120'000);
+	emp3.promote(5'000);
+
+	my_db.displayCurrent();
+	my_db.displayFormer();
+	my_db.displayall();
+
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
